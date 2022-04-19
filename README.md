@@ -5,9 +5,12 @@ This is a fully operational flask web app that utilizes jinja to render a web pa
 In order to shorten a URL and then restore it back to it's original,
 we have to generate a unique identifier for the URL and create a key value pair, 
 where the key is the unique identifier and the value is the original URL.
-We then have to store the key value pair somewhere so we can retieve the original
-at a later time. Since I didn't have a database to use, I use the client's cookies to store
-the key value pairs. 
+We then have to store the key value pair somewhere so we can retrieve the original
+at a later time. 
+
+Gaps/Things to Improve:
+1. I use the client's cookies to store the URLs when it should be a database. 
+2. I use a counter to generate an identifier when it should be a hash function based on the original URL.
 
 I spent about 2 hours creating this.
 

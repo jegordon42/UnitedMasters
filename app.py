@@ -11,9 +11,10 @@ def shortenURL():
     urlToShorten = request.json['URL']
     
     #Get the count of how many URLs are stored on the client's browser as cookies
-    countOfURLsGenerated = int(request.cookies.get('countOfURLsGenerated'))
-    if not countOfURLsGenerated:
+    if not request.cookies.get('countOfURLsGenerated'):
         countOfURLsGenerated = 0
+    else:
+        countOfURLsGenerated = int(request.cookies.get('countOfURLsGenerated'))
     countOfURLsGenerated += 1
 
     #Use the count of Urls generated as an 'Unique Id'
